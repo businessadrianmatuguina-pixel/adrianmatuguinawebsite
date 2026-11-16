@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Freelance Virtual Assistant, Social Media Manager, and Community Manager helping businesses stay organized, save time, and grow online.">
+  <meta name="theme-color" content="#f7f7f4">
+  <title>Freelance Support | Virtual Assistant & Community Manager</title>
+  <style>
+    :root {
+      --bg: #f7f7f4;
+      --surface: #ffffff;
+      --ink: #20231f;
+      --muted: #666d65;
+      --line: #e4e7e0;
+      --accent: #315d4b;
+      --accent-soft: #e8efe9;
+      --max: 1120px;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 20; background: rgba(247,247,244,.92);
+      backdrop-filter: blur(14px); border-bottom: 1px solid rgba(228,231,224,.85);
+    }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-weight: 750; letter-spacing: -.04em; font-size: 1.08rem; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 27px; color: var(--muted); font-size: .9rem; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta, .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 17px; border-radius: 999px; background: var(--accent); color: white;
+      font-weight: 650; font-size: .9rem; border: 1px solid var(--accent); transition: .2s ease;
+    }
+    .nav-cta:hover, .button:hover { background: #244737; color: white; transform: translateY(-1px); }
+    .button.secondary { background: transparent; color: var(--ink); border-color: var(--line); }
+    .button.secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .hero { padding: 106px 0 88px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--accent); font-weight: 700; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #6c9b7f; box-shadow: 0 0 0 5px #e5eee7; }
+    h1 { max-width: 850px; margin: 22px 0 20px; font-size: clamp(2.8rem, 7vw, 5.7rem); line-height: .99; letter-spacing: -.075em; font-weight: 760; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-copy { max-width: 660px; color: var(--muted); font-size: clamp(1.04rem, 2vw, 1.2rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 31px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 25px; margin-top: 58px; padding-top: 23px; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+    .hero-meta strong { display: block; color: var(--ink); font-size: 1.03rem; }
+    section { padding: 82px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
+    .kicker { color: var(--accent); font-size: .76rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    h2 { margin: 8px 0 0; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.06em; line-height: 1.08; }
+    .section-intro { max-width: 470px; color: var(--muted); margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 55px; align-items: start; }
+    .about-copy { color: var(--muted); font-size: 1.04rem; }
+    .about-copy p:first-child { margin-top: 0; }
+    .highlight { background: var(--accent-soft); border-radius: var(--radius); padding: 27px; }
+    .highlight strong { display: block; font-size: 2.5rem; line-height: 1; letter-spacing: -.06em; color: var(--accent); }
+    .highlight p { color: var(--muted); margin: 12px 0 0; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .service, .project, .skill-panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; }
+    .service-number { color: var(--accent); font-size: .78rem; font-weight: 750; letter-spacing: .1em; }
+    h3 { margin: 13px 0 8px; font-size: 1.15rem; letter-spacing: -.025em; }
+    .service p, .project p { color: var(--muted); font-size: .93rem; margin: 0; }
+    .experience { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .project { min-height: 220px; display: flex; flex-direction: column; justify-content: space-between; }
+    .project-tag { display: inline-flex; width: fit-content; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 5px 10px; font-size: .74rem; font-weight: 700; }
+    .project a { margin-top: 18px; color: var(--accent); font-weight: 700; font-size: .9rem; }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .skill-panel h3 { margin-top: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { border: 1px solid var(--line); color: #515a52; border-radius: 999px; padding: 7px 11px; font-size: .83rem; background: #fcfcfa; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .step { border-top: 2px solid var(--accent); padding-top: 16px; }
+    .step b { font-size: .78rem; color: var(--accent); letter-spacing: .1em; }
+    .step p { color: var(--muted); margin: 7px 0 0; font-size: .93rem; }
+    .contact { background: #202b25; color: white; border-radius: 26px; padding: clamp(28px, 6vw, 65px); display: flex; align-items: end; justify-content: space-between; gap: 35px; }
+    .contact .kicker { color: #a9c7b3; }
+    .contact h2 { max-width: 610px; }
+    .contact p { color: #c5cec7; max-width: 520px; }
+    .contact .button { background: white; color: #202b25; border-color: white; white-space: nowrap; }
+    .contact .button:hover { background: #e9eee9; }
+    footer { padding: 26px 0; color: var(--muted); font-size: .83rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .social-links { display: flex; gap: 17px; }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .hero { padding: 78px 0 65px; }
+      section { padding: 64px 0; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 15px; }
+      .about-grid, .skills-grid { grid-template-columns: 1fr; gap: 24px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 30px, var(--max)); }
+      .service-grid, .experience, .steps { grid-template-columns: 1fr; }
+      .hero-meta { gap: 18px; }
+      .nav { min-height: 64px; }
+      .nav-cta { padding: 9px 13px; font-size: .82rem; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">Freelance<span>Support.</span></a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#work">Experience</a><a href="#skills">Skills</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home" style="border-top:0">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span> Available for freelance opportunities</div>
+      <h1>Reliable support.<br><em>More room to grow.</em></h1>
+      <p class="hero-copy">I help businesses stay organized, manage their online communities, and maintain a consistent social media presence through dependable virtual assistance and practical digital support.</p>
+      <div class="hero-actions">
+        <a class="button" href="#contact">Work with me <span aria-hidden="true">↗</span></a>
+        <a class="button secondary" href="#services">Explore my services</a>
+      </div>
+      <div class="hero-meta">
+        <div><strong>Since 2020</strong>Freelance experience</div>
+        <div><strong>90K → 200K</strong>Community growth achievement</div>
+        <div><strong>Remote</strong>Based in the Philippines</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">About me</div><h2>Practical help for<br>your everyday work.</h2></div>
+        <p class="section-intro">A flexible freelance partner for the tasks that keep your business and online community moving.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>I’m a freelance Virtual Assistant, Social Media Manager, and Community Manager with experience supporting gaming, technology, NFT, and online business projects.</p>
+          <p>My work includes managing social platforms, responding to customers and community members, creating and scheduling content, organizing information, and supporting day-to-day operations. I enjoy making busy workflows easier to manage and helping brands build genuine relationships with their audiences.</p>
+          <p>I also use AI tools in my daily work and am currently developing my skills in n8n workflow automation to help reduce repetitive tasks and improve efficiency.</p>
+        </div>
+        <div class="highlight">
+          <strong>90K to 200K</strong>
+          <p>Helped grow an NFT project's social media following through community engagement and online growth activities.</p>
+          <div style="height:1px;background:#d4e1d6;margin:22px 0"></div>
+          <strong>Customer-first</strong>
+          <p>Previous customer service experience at T-Mobile, supporting customers with billing, plans, account questions, and troubleshooting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">What I can do</div><h2>Services that make<br>work easier.</h2></div>
+        <p class="section-intro">Choose the support you need, from daily admin tasks to community engagement and content operations.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service"><div class="service-number">01 / ADMIN</div><h3>Virtual Assistance</h3><p>Data entry, online research, file organization, spreadsheet updates, task tracking, and general administrative support.</p></article>
+        <article class="service"><div class="service-number">02 / SOCIAL</div><h3>Social Media Management</h3><p>Content scheduling, captions, platform updates, audience engagement, basic graphics, and performance tracking.</p></article>
+        <article class="service"><div class="service-number">03 / COMMUNITY</div><h3>Community Management</h3><p>Daily community support, moderation, member onboarding, discussions, event coordination, and engagement.</p></article>
+        <article class="service"><div class="service-number">04 / DISCORD</div><h3>Discord Management</h3><p>Channel and role organization, moderation, bot support, announcements, member assistance, and server upkeep.</p></article>
+        <article class="service"><div class="service-number">05 / CREATIVE</div><h3>Content & Video Editing</h3><p>Social media graphics, short-form video edits, gaming content, promotional materials, and basic visual support.</p></article>
+        <article class="service"><div class="service-number">06 / AUTOMATION</div><h3>AI & Workflow Support</h3><p>AI-assisted research and writing, plus developing n8n automation workflows for repetitive tasks and connected apps.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Experience & projects</div><h2>Work built around<br>people and progress.</h2></div>
+        <p class="section-intro">Experience across online communities, customer support, content production, and digital operations.</p>
+      </div>
+      <div class="experience">
+        <article class="project">
+          <div><span class="project-tag">Community growth</span><h3>NFT & Gaming Communities</h3><p>Supported community growth from 90K to 200K followers, managed discussions and moderators, coordinated events, and helped members with project questions.</p></div>
+        </article>
+        <article class="project">
+          <div><span class="project-tag">Customer support</span><h3>T-Mobile Customer Service</h3><p>Assisted customers through chat and phone support with billing concerns, plan information, promotions, account inquiries, and troubleshooting.</p></div>
+        </article>
+        <article class="project">
+          <div><span class="project-tag">Social media</span><h3>Content & Social Operations</h3><p>Created and scheduled social content, designed graphics, edited videos, supported YouTube SEO, and helped maintain Facebook, Instagram, and other channels.</p></div>
+        </article>
+        <article class="project">
+          <div><span class="project-tag">Community projects</span><h3>Reddit & Online Communities</h3><p>Experience building and supporting topic-based communities, publishing useful content, engaging members, and keeping discussions organized.</p><a href="https://www.reddit.com/r/LossPreventionGame/" target="_blank" rel="noopener">View Reddit community ↗</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">Tools & skills</div><h2>Ready to work with<br>your existing tools.</h2></div>
+        <p class="section-intro">Comfortable learning new platforms and following the processes your team already uses.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-panel"><h3>Platforms & tools</h3><div class="chips"><span class="chip">Discord</span><span class="chip">Telegram</span><span class="chip">Reddit</span><span class="chip">Facebook</span><span class="chip">Instagram</span><span class="chip">TikTok</span><span class="chip">Meta Business Suite</span><span class="chip">Canva</span><span class="chip">Google Workspace</span><span class="chip">Microsoft Excel</span><span class="chip">ChatGPT</span><span class="chip">n8n (learning)</span></div></div>
+        <div class="skill-panel"><h3>Core strengths</h3><div class="chips"><span class="chip">Customer support</span><span class="chip">Community moderation</span><span class="chip">Content scheduling</span><span class="chip">Online research</span><span class="chip">Data entry</span><span class="chip">Lead tracking</span><span class="chip">Video editing</span><span class="chip">Graphic design</span><span class="chip">Task coordination</span><span class="chip">AI-assisted workflows</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="kicker">How I work</div><h2>Simple, dependable<br>and organized.</h2></div>
+        <p class="section-intro">A straightforward process that keeps priorities clear and communication consistent.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01 / UNDERSTAND</b><h3>Learn your workflow</h3><p>I clarify your goals, tools, priorities, and preferred way of working.</p></div>
+        <div class="step"><b>02 / SUPPORT</b><h3>Handle the details</h3><p>I work through agreed tasks, keep information organized, and communicate progress.</p></div>
+        <div class="step"><b>03 / IMPROVE</b><h3>Look for better ways</h3><p>I flag recurring issues and identify practical ways to make everyday work smoother.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div><div class="kicker">Let's work together</div><h2>Need reliable support for your business?</h2><p>Tell me what you need help with. I’d be glad to discuss how I can support your team and make your day-to-day workload easier.</p></div>
+        <a class="button" href="https://www.linkedin.com/in/adrian-matuguina/" target="_blank" rel="noopener">Connect on LinkedIn ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Freelance Support. Built with care.</span>
+    <div class="social-links"><a href="https://www.linkedin.com/in/adrian-matuguina/" target="_blank" rel="noopener">LinkedIn</a><a href="https://www.reddit.com/r/LossPreventionGame/" target="_blank" rel="noopener">Reddit</a></div>
+  </div>
+</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
